@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LandFlix Landing Page
 
-## Getting Started
+![LandFlix – Landing](./public/preview.png)
 
-First, run the development server:
+> Landing page officielle de **LandFlix**, l'application multiplateforme pour découvrir, télécharger et organiser vos films et séries préférés. Interface premium, animations fluides et design Material Design 3 adapté aux tendances 2025.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ✨ Aperçu rapide
+
+- 🎬 **Présentation produit** : sections Hero, fonctionnalités, statistiques, captures d'écran et téléchargements.
+- 💻 **Multipériphérique** : mise en avant de la disponibilité Android, iOS, Windows, macOS, Linux et Web.
+- 🪄 **Animations douces** : révélations au scroll via Intersection Observer et transitions CSS.
+- 🧩 **Code modulaire** : composants isolés, données centralisées et styles via module CSS.
+- 🌙 **Design sombre moderne** : palette violette/bleue, effets glassmorphism et typographie Outfit.
+
+## 🗂️ Structure principale
+
+```text
+src/
+└── app/
+    ├── layout.tsx             # Layout global + métadonnées SEO/OG
+    ├── globals.css            # Design system & resets
+    ├── page.tsx               # Composition de la landing
+    ├── page.module.css        # Styles spécifiques à la page
+    ├── _components/landing/   # Composants de section (Hero, Stats, etc.)
+    ├── _data/landingData.ts   # Contenus statiques typés
+    └── _hooks/useScrollReveal.ts # Hook d’animation au scroll
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Stack technique
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- [Next.js 15 (App Router)](https://nextjs.org/) avec rendu statique.
+- [React 19](https://react.dev/) + hooks personnalisés.
+- [TypeScript](https://www.typescriptlang.org/) pour la sécurité des types.
+- [CSS Modules](https://nextjs.org/docs/app/building-your-application/styling/css-modules) + design tokens maison.
+- [react-icons](https://react-icons.github.io/react-icons/) pour la bibliothèque d’icônes.
+- [clsx](https://github.com/lukeed/clsx) pour la composition de classes.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Prise en main
 
-## Learn More
+1. **Installer les dépendances** :
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+pnpm install
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Lancer le serveur de développement** :
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+pnpm run dev
+```
 
-## Deploy on Vercel
+1. Ouvrir [http://localhost:3000](http://localhost:3000) pour voir la page.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Modifier les fichiers dans `src/app` : le rechargement se fait automatiquement.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📦 Scripts disponibles
+
+- `pnpm run dev` – serveur de développement Next.js avec Turbopack.
+- `pnpm run build` – build de production optimisé.
+- `pnpm run start` – serveur de production (après build).
+
+## 📸 Mettre à jour les visuels
+
+- Remplacez `public/preview.png`, `public/og-image.jpg` et `public/twitter-card.jpg` par vos assets finaux.
+- Les placeholders de mockups (section Hero/Captures) se trouvent dans `page.module.css`.
+
+## 🌐 Déploiement
+
+La page est statique : un `next build` génère le HTML. Vous pouvez déployer sur Vercel, Netlify, Cloudflare Pages ou tout service supportant les sites statiques.
+
+## 🤝 Contribution
+
+1. Fork du projet
+2. Création d’une branche : `git checkout -b feature/nouvelle-section`
+3. Commit : `git commit -m "feat: ajouter section partenaires"`
+4. Push : `git push origin feature/nouvelle-section`
+5. Ouvrir une Pull Request
+
+## 📄 Licence
+
+Projet maintenu par **Landry (Starland9)**. Consultez les conditions de réutilisation avant distribution.
+
+---
+
+💬 Besoin d’aide ou envie de contribuer ? Ouvrez une issue sur le dépôt GitHub ou contactez Landry.
