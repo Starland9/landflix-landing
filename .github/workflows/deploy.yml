@@ -36,10 +36,24 @@ jobs:
         run: pnpm install
 
       - name: Build with Next.js
-        run: pnpm run build
+        run: |
+          echo "Building with basePath: $NEXT_PUBLIC_BASE_PATH"
+          pnpm run build
         env:
           NEXT_PUBLIC_BASE_PATH: /landflix-landing
           NEXT_PUBLIC_SITE_URL: https://starland9.github.io/landflix-landing
+
+      - name: Verify build output
+        run: |
+          if [ ! -f ./out/index.html ]; then
+            echo "Error: index.html not found in build output!"
+            exit 1
+          fi
+          if [ ! -f ./out/.nojekyll ]; then
+            echo "Warning: .nojekyll file not found in build output"
+          fi
+          echo "Build output verification successful"
+          ls -la ./out/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

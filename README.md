@@ -88,6 +88,15 @@ Vous pouvez aussi déclencher le déploiement manuellement :
 2. Sélectionnez le workflow **Deploy to GitHub Pages**
 3. Cliquez sur **Run workflow**
 
+#### ⚠️ Dépannage
+
+Si vous voyez le README au lieu de la landing page :
+1. Vérifiez que **Settings** > **Pages** > **Source** est configuré sur **GitHub Actions**
+2. Vérifiez que le workflow dans l'onglet **Actions** s'est terminé avec succès
+3. Attendez 2-3 minutes et videz le cache de votre navigateur (Ctrl+F5)
+
+Pour plus de détails, consultez [GITHUB_PAGES_SETUP.md](./GITHUB_PAGES_SETUP.md).
+
 ### Autres plateformes
 
 La page est statique : un `next build` génère le HTML. Vous pouvez aussi déployer sur Vercel, Netlify, Cloudflare Pages ou tout service supportant les sites statiques.
