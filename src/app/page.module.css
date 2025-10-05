@@ -1,12 +1,3 @@
-:root {
-    --gradient-primary: linear-gradient(135deg, #8b5dff 0%, #3b82f6 100%);
-    --gradient-card: linear-gradient(135deg, #1a1a24 0%, #2a2a38 100%);
-    --gradient-shimmer: linear-gradient(90deg, #2a2a38 0%, #3a3a48 50%, #2a2a38 100%);
-    --gradient-hero: radial-gradient(circle at 20% 20%, rgba(139, 93, 255, 0.65), transparent 65%),
-        radial-gradient(circle at 80% 0%, rgba(59, 130, 246, 0.55), transparent 60%),
-        radial-gradient(circle at 50% 90%, rgba(20, 184, 166, 0.4), transparent 55%);
-}
-
 .page {
     overflow: hidden;
 }
