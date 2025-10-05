@@ -4,6 +4,8 @@
 
 > Landing page officielle de **LandFlix**, l'application multiplateforme pour découvrir, télécharger et organiser vos films et séries préférés. Interface premium, animations fluides et design Material Design 3 adapté aux tendances 2025.
 
+**🌐 Démo en ligne** : [https://starland9.github.io/landflix-landing](https://starland9.github.io/landflix-landing)
+
 ## ✨ Aperçu rapide
 
 - 🎬 **Présentation produit** : sections Hero, fonctionnalités, statistiques, captures d'écran et téléchargements.
@@ -56,8 +58,9 @@ pnpm run dev
 ## 📦 Scripts disponibles
 
 - `pnpm run dev` – serveur de développement Next.js avec Turbopack.
-- `pnpm run build` – build de production optimisé.
+- `pnpm run build` – build de production optimisé pour GitHub Pages.
 - `pnpm run start` – serveur de production (après build).
+- `pnpm run export` – génère l'export statique pour le déploiement.
 
 ## 📸 Mettre à jour les visuels
 
@@ -66,7 +69,28 @@ pnpm run dev
 
 ## 🌐 Déploiement
 
-La page est statique : un `next build` génère le HTML. Vous pouvez déployer sur Vercel, Netlify, Cloudflare Pages ou tout service supportant les sites statiques.
+### GitHub Pages (Recommandé)
+
+Le projet est configuré pour le déploiement automatique sur GitHub Pages. Chaque push sur la branche `main` déclenche automatiquement le déploiement.
+
+**URL de déploiement** : [https://starland9.github.io/landflix-landing](https://starland9.github.io/landflix-landing)
+
+#### Configuration requise (une seule fois)
+
+1. Allez dans **Settings** > **Pages** de votre dépôt GitHub
+2. Sous **Source**, sélectionnez **GitHub Actions**
+3. Le déploiement se fera automatiquement à chaque push sur `main`
+
+#### Déploiement manuel
+
+Vous pouvez aussi déclencher le déploiement manuellement :
+1. Allez dans l'onglet **Actions** de votre dépôt
+2. Sélectionnez le workflow **Deploy to GitHub Pages**
+3. Cliquez sur **Run workflow**
+
+### Autres plateformes
+
+La page est statique : un `next build` génère le HTML. Vous pouvez aussi déployer sur Vercel, Netlify, Cloudflare Pages ou tout service supportant les sites statiques.
 
 ## 🤝 Contribution
 

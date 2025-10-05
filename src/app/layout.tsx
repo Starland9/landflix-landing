@@ -8,7 +8,7 @@ const outfit = Outfit({
   display: "swap",
 });
 
-const siteUrl = "https://landflix.starland9.dev";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://starland9.github.io/landflix-landing";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
