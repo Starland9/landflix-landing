@@ -4,6 +4,8 @@
 
 > Landing page officielle de **LandFlix**, l'application multiplateforme pour découvrir, télécharger et organiser vos films et séries préférés. Interface premium, animations fluides et design Material Design 3 adapté aux tendances 2025.
 
+**🌐 Démo en ligne** : [https://starland9.github.io/landflix-landing](https://starland9.github.io/landflix-landing)
+
 ## ✨ Aperçu rapide
 
 - 🎬 **Présentation produit** : sections Hero, fonctionnalités, statistiques, captures d'écran et téléchargements.
