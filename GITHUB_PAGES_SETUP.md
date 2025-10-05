@@ -47,6 +47,33 @@ Pour vérifier que tout fonctionne :
 
 ## 🐛 Dépannage
 
+### Le site affiche le README au lieu de la landing page
+
+**Symptôme** : Lorsque vous visitez https://starland9.github.io/landflix-landing, vous voyez le contenu du fichier README.md affiché au lieu de la landing page.
+
+**Causes possibles** :
+1. GitHub Pages n'est pas configuré pour utiliser GitHub Actions comme source
+2. Le workflow GitHub Actions n'a pas encore été exécuté avec succès
+3. La build a échoué et aucun contenu n'a été déployé
+
+**Solutions** :
+
+1. **Vérifier la configuration de GitHub Pages** :
+   - Allez dans **Settings** > **Pages** de votre dépôt
+   - Sous **Source**, assurez-vous que **GitHub Actions** est sélectionné
+   - Si ce n'est pas le cas, sélectionnez **GitHub Actions** et cliquez sur **Save**
+
+2. **Vérifier l'état du workflow** :
+   - Allez dans l'onglet **Actions** du dépôt
+   - Vérifiez que le workflow "Deploy to GitHub Pages" s'est terminé avec succès
+   - Si le workflow a échoué, consultez les logs pour identifier l'erreur
+   - Relancez le workflow si nécessaire
+
+3. **Attendre la propagation** :
+   - Après un déploiement réussi, attendez 2-3 minutes
+   - Videz le cache de votre navigateur (Ctrl+F5 ou Cmd+Shift+R)
+   - Réessayez d'accéder au site
+
 ### Le site ne s'affiche pas
 
 - Vérifiez que le workflow s'est terminé avec succès dans l'onglet Actions
