@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import styles from "./page.module.css";
 import { Hero } from "./_components/landing/Hero";
@@ -34,9 +34,9 @@ export default function Home() {
 
       <main>
         <StatsSection stats={stats} />
-        <FeaturesSection features={features} />
+        {/* <FeaturesSection features={features} /> */}
         <ScreenshotsSection screenshots={screenshots} />
-        <PlatformsSection platforms={platforms} />
+        {/* <PlatformsSection platforms={platforms} /> */}
         <TechSection techStack={techStack} benefits={flutterBenefits} />
         <DownloadSection buttons={downloadButtons} />
         <FaqSection faqs={faqItems} />

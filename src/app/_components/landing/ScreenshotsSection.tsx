@@ -1,3 +1,4 @@
+import Image from "next/image";
 import clsx from "clsx";
 import styles from "../../page.module.css";
 import type { Screenshot } from "../../_data/landingData";
@@ -12,7 +13,7 @@ export function ScreenshotsSection({ screenshots }: ScreenshotsSectionProps) {
       id="screenshots"
       className={clsx(styles.section, styles.screensSection)}
     >
-      <div className={styles.container}>
+      <div className={clsx(styles.container, styles.screensContainer)}>
         <div className={clsx(styles.sectionHeader, styles.reveal)}>
           <span className={styles.sectionBadge}>Interface</span>
           <h2>
@@ -27,10 +28,20 @@ export function ScreenshotsSection({ screenshots }: ScreenshotsSectionProps) {
               className={clsx(styles.screenshotCard, styles.reveal)}
               style={{ borderColor: screen.accent }}
             >
-              <div
-                className={styles.screenshotPreview}
-                style={{ background: screen.accent }}
-              />
+              <div className={styles.screenshotPreview}>
+                <Image
+                  src={screen.image}
+                  alt={screen.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 320px"
+                  priority={screen.title === "Écran d'accueil"}
+                />
+                <span
+                  className={styles.screenshotGlow}
+                  style={{ background: screen.accent }}
+                  aria-hidden
+                />
+              </div>
               <div className={styles.screenshotLabel}>
                 <h4>{screen.title}</h4>
                 <p>{screen.description}</p>

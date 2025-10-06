@@ -8,7 +8,9 @@ const outfit = Outfit({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://starland9.github.io/landflix-landing";
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  "https://starland9.github.io/landflix-landing";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -58,8 +60,13 @@ export const metadata: Metadata = {
     canonical: siteUrl,
   },
   icons: {
-    icon: "/favicon.ico",
-    apple: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico", type: "image/x-icon" },
+      { url: "/icon.jpeg", type: "image/jpeg", sizes: "192x192" },
+      { url: "/icon.jpeg", type: "image/jpeg", sizes: "512x512" },
+    ],
+    apple: "/icon.jpeg",
+    shortcut: "/icon.jpeg",
   },
 };
 

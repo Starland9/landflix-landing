@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
 import styles from "../../page.module.css";
@@ -31,7 +32,16 @@ export function Hero({ navLinks }: HeroProps) {
       <div className={styles.heroGlow} aria-hidden />
       <nav className={styles.navbar}>
         <a href="#" className={styles.brand}>
-          <span className={styles.brandIcon}>LF</span>
+          <span className={styles.brandIcon}>
+            <Image
+              src="/icon.jpeg"
+              alt="Icône LandFlix"
+              fill
+              sizes="44px"
+              priority
+              style={{ objectFit: "cover" }}
+            />
+          </span>
           <div>
             <span className={styles.brandName}>LandFlix</span>
             <span className={styles.brandTagline}>
@@ -73,7 +83,14 @@ export function Hero({ navLinks }: HeroProps) {
       <div className={styles.heroGrid}>
         <div className={clsx(styles.heroContent, styles.reveal)}>
           <div className={styles.appIcon} aria-hidden>
-            <span>LF</span>
+            <Image
+              src="/icon.jpeg"
+              alt=""
+              fill
+              sizes="72px"
+              priority
+              style={{ objectFit: "cover" }}
+            />
           </div>
           <h1 className={styles.heroTitle}>LandFlix</h1>
           <p className={styles.heroSubtitle}>
