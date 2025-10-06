@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
+import { asset } from "./_utils/asset";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -61,12 +62,12 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.ico", type: "image/x-icon" },
-      { url: "/icon.jpeg", type: "image/jpeg", sizes: "192x192" },
-      { url: "/icon.jpeg", type: "image/jpeg", sizes: "512x512" },
+      { url: asset("/favicon.ico"), type: "image/x-icon" },
+      { url: asset("/icon.jpeg"), type: "image/jpeg", sizes: "192x192" },
+      { url: asset("/icon.jpeg"), type: "image/jpeg", sizes: "512x512" },
     ],
-    apple: "/icon.jpeg",
-    shortcut: "/icon.jpeg",
+    apple: asset("/icon.jpeg"),
+    shortcut: asset("/icon.jpeg"),
   },
 };
 

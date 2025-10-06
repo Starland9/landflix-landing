@@ -12,7 +12,7 @@
   content: "";
   position: absolute;
   inset: -5% -3% -8% -3%;
-  background-image: url("/landscape.jpg");
+  background-image: var(--hero-background-image, none);
   background-position: center top;
   background-size: cover;
   background-repeat: no-repeat;
@@ -129,10 +129,22 @@
 .heroOverlay {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(circle at 15% 20%, rgba(139, 93, 255, 0.4), transparent 55%),
-    radial-gradient(circle at 85% 15%, rgba(59, 130, 246, 0.35), transparent 60%),
-    linear-gradient(200deg, rgba(11, 11, 19, 0.55) 0%, rgba(10, 10, 18, 0.72) 45%, rgba(9, 9, 16, 0.8) 100%);
+  background: radial-gradient(
+      circle at 15% 20%,
+      rgba(139, 93, 255, 0.4),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(59, 130, 246, 0.35),
+      transparent 60%
+    ),
+    linear-gradient(
+      200deg,
+      rgba(11, 11, 19, 0.55) 0%,
+      rgba(10, 10, 18, 0.72) 45%,
+      rgba(9, 9, 16, 0.8) 100%
+    );
   pointer-events: none;
   z-index: -1;
 }

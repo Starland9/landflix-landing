@@ -25,6 +25,7 @@ import {
   FaWindows,
 } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
+import { asset } from "../_utils/asset";
 
 export type NavLink = {
   label: string;
@@ -182,28 +183,28 @@ export const screenshots: Screenshot[] = [
   {
     title: "Écran d'accueil",
     description: "Parcourez les nouveautés du moment",
-    image: "/screenshots/home.jpg",
+    image: asset("/screenshots/home.jpg"),
     alt: "Accueil de LandFlix montrant les tendances du jour",
     accent: "var(--color-primary-purple)",
   },
   {
     title: "Résultats de recherche",
     description: "Filtres puissants et fiches enrichies",
-    image: "/screenshots/search_result.jpg",
+    image: asset("/screenshots/search_result.jpg"),
     alt: "Résultats de recherche sur LandFlix",
     accent: "var(--color-accent-teal)",
   },
   {
     title: "Gestionnaire de téléchargements",
     description: "Suivi précis des fichiers actifs",
-    image: "/screenshots/download_manager.jpg",
+    image: asset("/screenshots/download_manager.jpg"),
     alt: "Gestionnaire de téléchargements de LandFlix",
     accent: "var(--color-primary-blue)",
   },
   {
     title: "Fiche détaillée",
     description: "Infos complètes et recommandations",
-    image: "/screenshots/details.jpg",
+    image: asset("/screenshots/details.jpg"),
     alt: "Fiche détaillée d'un film sur LandFlix",
     accent: "var(--color-accent-orange)",
   },

@@ -1,10 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 import clsx from "clsx";
 import styles from "../../page.module.css";
 import type { NavLink } from "../../_data/landingData";
+import { asset } from "../../_utils/asset";
 
 type HeroProps = {
   navLinks: NavLink[];
@@ -12,8 +13,11 @@ type HeroProps = {
 
 export function Hero({ navLinks }: HeroProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const basePath = (process.env.NEXT_PUBLIC_BASE_PATH ?? "").replace(/\/$/, "");
-  const heroBackgroundUrl = `${basePath}/landscape.jpg`;
+  const heroBackgroundImage = asset("/landscape.jpg");
+  const iconUrl = asset("/icon.jpeg");
+  const heroStyle: CSSProperties & { "--hero-background-image": string } = {
+    "--hero-background-image": `url(${heroBackgroundImage})`,
+  };
 
   useEffect(() => {
     const closeMenu = () => setIsMenuOpen(false);
@@ -30,11 +34,11 @@ export function Hero({ navLinks }: HeroProps) {
   }, []);
 
   return (
-    <header className={styles.hero}>
+    <header className={styles.hero} style={heroStyle}>
       <div
         className={styles.heroBackground}
         aria-hidden
-        style={{ backgroundImage: `url(${heroBackgroundUrl})` }}
+        style={{ backgroundImage: `url(${heroBackgroundImage})` }}
       />
       <div className={styles.heroOverlay} aria-hidden />
       <div className={styles.heroGlow} aria-hidden />
@@ -42,7 +46,7 @@ export function Hero({ navLinks }: HeroProps) {
         <a href="#" className={styles.brand}>
           <span className={styles.brandIcon}>
             <Image
-              src="/icon.jpeg"
+              src={iconUrl}
               alt="Icône LandFlix"
               fill
               sizes="44px"
@@ -92,7 +96,7 @@ export function Hero({ navLinks }: HeroProps) {
         <div className={clsx(styles.heroContent, styles.reveal)}>
           <div className={styles.appIcon} aria-hidden>
             <Image
-              src="/icon.jpeg"
+              src={iconUrl}
               alt=""
               fill
               sizes="72px"
