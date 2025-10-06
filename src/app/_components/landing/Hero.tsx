@@ -12,6 +12,8 @@ type HeroProps = {
 
 export function Hero({ navLinks }: HeroProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const basePath = (process.env.NEXT_PUBLIC_BASE_PATH ?? "").replace(/\/$/, "");
+  const heroBackgroundUrl = `${basePath}/landscape.jpg`;
 
   useEffect(() => {
     const closeMenu = () => setIsMenuOpen(false);
@@ -29,6 +31,12 @@ export function Hero({ navLinks }: HeroProps) {
 
   return (
     <header className={styles.hero}>
+      <div
+        className={styles.heroBackground}
+        aria-hidden
+        style={{ backgroundImage: `url(${heroBackgroundUrl})` }}
+      />
+      <div className={styles.heroOverlay} aria-hidden />
       <div className={styles.heroGlow} aria-hidden />
       <nav className={styles.navbar}>
         <a href="#" className={styles.brand}>
