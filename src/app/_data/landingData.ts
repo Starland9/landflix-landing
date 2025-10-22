@@ -97,10 +97,17 @@ export type ResourceLink = {
   external?: boolean;
 };
 
+export type EngagementConfig = {
+  formspreeEndpoint: string;
+  countApiNamespace: string;
+  countApiKey: string;
+};
+
 export const navLinks: NavLink[] = [
   { label: "Fonctionnalités", href: "#features" },
   { label: "Plateformes", href: "#platforms" },
   { label: "Téléchargement", href: "#download" },
+  { label: "Communauté", href: "#community" },
   { label: "FAQ", href: "#faq" },
 ];
 
@@ -209,6 +216,20 @@ export const screenshots: Screenshot[] = [
     accent: "var(--color-accent-orange)",
   },
 ];
+
+const defaultFormspreeEndpoint =
+  process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT ?? "";
+
+const defaultCountApiNamespace =
+  process.env.NEXT_PUBLIC_COUNTAPI_NAMESPACE ?? "landflix-landing";
+
+const defaultCountApiKey = process.env.NEXT_PUBLIC_COUNTAPI_KEY ?? "visits";
+
+export const engagementConfig: EngagementConfig = {
+  formspreeEndpoint: defaultFormspreeEndpoint.trim(),
+  countApiNamespace: defaultCountApiNamespace.trim() || "landflix-landing",
+  countApiKey: defaultCountApiKey.trim() || "visits",
+};
 
 export const platforms: Platform[] = [
   {

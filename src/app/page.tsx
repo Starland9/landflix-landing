@@ -10,6 +10,7 @@ import { TechSection } from "./_components/landing/TechSection";
 import { DownloadSection } from "./_components/landing/DownloadSection";
 import { FaqSection } from "./_components/landing/FaqSection";
 import { Footer } from "./_components/landing/Footer";
+import { EngagementSection } from "./_components/landing/EngagementSection";
 import { useScrollReveal } from "./_hooks/useScrollReveal";
 import {
   navLinks,
@@ -23,6 +24,7 @@ import {
   faqItems,
   socialLinks,
   resourceLinks,
+  engagementConfig,
 } from "./_data/landingData";
 
 export default function Home() {
@@ -39,6 +41,11 @@ export default function Home() {
         {/* <PlatformsSection platforms={platforms} /> */}
         <TechSection techStack={techStack} benefits={flutterBenefits} />
         <DownloadSection buttons={downloadButtons} />
+        <EngagementSection
+          formspreeEndpoint={engagementConfig.formspreeEndpoint}
+          countApiNamespace={engagementConfig.countApiNamespace}
+          countApiKey={engagementConfig.countApiKey}
+        />
         <FaqSection faqs={faqItems} />
       </main>
 

@@ -13,6 +13,7 @@
 - 🪄 **Animations douces** : révélations au scroll via Intersection Observer et transitions CSS.
 - 🧩 **Code modulaire** : composants isolés, données centralisées et styles via module CSS.
 - 🌙 **Design sombre moderne** : palette violette/bleue, effets glassmorphism et typographie Outfit.
+- 📬 **Engagement** : formulaire newsletter Formspree intégré et compteur de visites CountAPI.
 
 ## 🗂️ Structure principale
 
@@ -55,6 +56,20 @@ pnpm run dev
 
 1. Modifier les fichiers dans `src/app` : le rechargement se fait automatiquement.
 
+### 🔧 Configurer la newsletter & le compteur
+
+Créez un fichier `.env.local` à la racine avec les variables suivantes :
+
+```bash
+NEXT_PUBLIC_FORMSPREE_ENDPOINT=https://formspree.io/f/xxxxxxx
+NEXT_PUBLIC_COUNTAPI_NAMESPACE=landflix-landing
+NEXT_PUBLIC_COUNTAPI_KEY=visits
+```
+
+- Remplacez `NEXT_PUBLIC_FORMSPREE_ENDPOINT` par l'URL fournie par Formspree (plan gratuit disponible).
+- `NEXT_PUBLIC_COUNTAPI_NAMESPACE` et `NEXT_PUBLIC_COUNTAPI_KEY` identifient votre compteur CountAPI. Vous pouvez conserver les valeurs par défaut ou choisir vos propres identifiants.
+- Les variables `NEXT_PUBLIC_*` sont injectées au build : relancez `pnpm run dev` ou `pnpm run build` après modification.
+
 ## 📦 Scripts disponibles
 
 - `pnpm run dev` – serveur de développement Next.js avec Turbopack.
@@ -84,6 +99,7 @@ Le projet est configuré pour le déploiement automatique sur GitHub Pages. Chaq
 #### Déploiement manuel
 
 Vous pouvez aussi déclencher le déploiement manuellement :
+
 1. Allez dans l'onglet **Actions** de votre dépôt
 2. Sélectionnez le workflow **Deploy to GitHub Pages**
 3. Cliquez sur **Run workflow**
@@ -91,6 +107,7 @@ Vous pouvez aussi déclencher le déploiement manuellement :
 #### ⚠️ Dépannage
 
 Si vous voyez le README au lieu de la landing page :
+
 1. Vérifiez que **Settings** > **Pages** > **Source** est configuré sur **GitHub Actions**
 2. Vérifiez que le workflow dans l'onglet **Actions** s'est terminé avec succès
 3. Attendez 2-3 minutes et videz le cache de votre navigateur (Ctrl+F5)
