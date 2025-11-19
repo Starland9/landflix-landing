@@ -6,7 +6,18 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "export": "next build"
+    "export": "next build",
+    "pm2:start": "pm2 start ecosystem.config.js --env production",
+    "pm2:stop": "pm2 stop landflix-landing",
+    "pm2:restart": "pm2 restart landflix-landing",
+    "pm2:reload": "pm2 reload landflix-landing",
+    "pm2:delete": "pm2 delete landflix-landing",
+    "pm2:logs": "pm2 logs landflix-landing",
+    "pm2:monit": "pm2 monit",
+    "deploy:setup": "pm2 deploy ecosystem.config.js production setup",
+    "deploy:prod": "pm2 deploy ecosystem.config.js production",
+    "deploy:update": "pm2 deploy ecosystem.config.js production update",
+    "deploy:revert": "pm2 deploy ecosystem.config.js production revert 1"
   },
   "dependencies": {
     "clsx": "^2.1.1",
